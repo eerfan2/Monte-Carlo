@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulasi Monte Carlo - Hasil</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+
+    <header class="bg-primary text-white text-center py-4">
+        <h1>Simulasi Prediksi Jumlah Tamu Menginap</h1>
+        <h2>Menggunakan Monte Carlo</h2>
+    </header>
+
+    <!-- Navigation Bar -->
+    <ul class="nav nav-tabs bg-dark-subtle">
+        <li class="nav-item">
+            <a class="nav-link" href="/">Beranda</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/data">Data Riwayat</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/simulasi">Simulasi</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/hasil">Hasil</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/about">Tentang Saya</a>
+        </li>
+    </ul>
+
+    <!-- Content Section -->
+    <div class="container my-4">
+        <h2 class="text-center">Hasil Simulasi Monte Carlo</h2>
+        
+        {% if data_json %}
+            <h3 class="text-center">Tahun Simulasi: {{ data_json['tahun'] }}</h3>
+        {% else %}
+            <p class="text-center">Belum ada hasil simulasi.</p>
+        {% endif %}
+
+        {% if data_json and data_json['kategori'] %}
+        <div class="mt-4">
+            <h3 class="text-center">Hasil Simulasi</h3>
+            <table class="table table-bordered table-striped">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Permintaan</th>
+                        <th>Frekuensi</th>
+                        <th>Distribusi Probabilitas</th>
+                        <th>Kumulatif</th>
+                        <th>Interval</th>
+                        <th>Nilai Acak</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in data_json['kategori'] %}
+                    <tr>
+                        <td>{{ item['nama'] }}</td>
+                        <td>{{ item['frekuensi'] }}</td>
+                        <td>{{ item['distribusi_probabilitas'] }}</td>
+                        <td>{{ item['distribusi_kumulatif'] }}</td>
+                        <td>{{ item['interval'] }}</td>
+                        <td>{{ item['random_number'] }}</td>
+                        <td>
+                            <form action="{{ url_for('delete_item', index=loop.index0) }}" method="POST">
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        </td>                        
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <!-- Tombol Simpan -->
+            <form action="{{ url_for('simpan_riwayat') }}" method="POST">
+                <button type="submit" class="btn btn-success mt-3">Simpan ke Riwayat</button>
+            </form>
+        </div>
+        {% else %}
+        <div class="alert alert-warning text-center" role="alert">
+            Belum ada hasil simulasi. Silakan lakukan simulasi terlebih dahulu.
+        </div>
+        {% endif %}
+
+        <!-- Menampilkan Prediksi -->
+        {% if prediksi %}
+            <h3 class="text-center">Prediksi Jumlah Tamu Bulan Depan: {{ prediksi | round(0) }}</h3>
+        {% else %}
+            <h3 class="text-center">Data historis tidak cukup untuk melakukan prediksi.</h3>
+        {% endif %}
+
+        <!-- Menampilkan Akurasi -->
+        {% if accuracy %}
+            <h3 class="text-center">Akurasi Prediksi: {{ accuracy }}%</h3>
+        {% endif %}
+
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 Universitas Bale Bandung</p>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

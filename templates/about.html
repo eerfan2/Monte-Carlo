@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Saya - Simulasi Monte Carlo</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">
+
+</head>
+<body>
+
+    <header class="bg-primary text-white text-center py-4">
+        <h1>Simulasi Prediksi Jumlah Tamu Menginap</h1>
+        <h2>Menggunakan Monte Carlo</h2>
+    </header>
+
+
+    <!-- Navigasi -->
+    <ul class="nav nav-tabs bg-dark-subtle">
+        <li class="nav-item">
+            <a class="nav-link" href="/">Beranda</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/data">Data Riwayat</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/simulasi">Simulasi</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/hasil">Hasil</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="/about">Tentang Saya</a>
+        </li>
+    </ul>
+
+    
+    <h1 class="text-center">Tentang Saya</h1>
+    <p class="text-center">Mahasiswa Universitas Bale Bandung</p>
+    <div class="container profile-content">
+        <div class="row">
+            <div class="col-12 text-center">
+                <img src="{{ url_for('static', filename='PP.jpg') }}" alt="Foto Profil">
+                <div class="about-section">
+                    <h2>M. Irfan Fadhlurrohman</h2>
+                    <p><strong>Status</strong>: Mahasiswa | Guru</p>
+                    <p><strong>Lokasi</strong>: Banjaran, Kab. Bandung, Indonesia</p>
+                </div>
+
+                <div class="about-section">
+                    <h3>Tentang Saya</h3>
+                    <p>
+                        Halo! Saya Irfan, seorang Mahasiswa yang memiliki minat dalam belajar ilmu komputer khususnya di dunia perkodingan. Saya memiliki pengalaman dalam mengembangkan aplikasi berbasis web dan menyelesaikan masalah kompleks dengan menggunakan algoritma dan model yang inovatif.
+                    </p>
+                    <p>
+                        Saya senang mempelajari teknologi baru dan mengeksplorasi bagaimana teknologi tersebut dapat diterapkan untuk menciptakan solusi yang berdampak.
+                    </p>
+                </div>
+
+                <div class="about-section">
+                    <h3>Keahlian & Pengalaman</h3>
+                    <ul>
+                        <li>Html, Css, Js</li>
+                        <li>Python, Php, SQL</li>
+                        <li>Pemecahan Masalah Algoritma</li>
+                        <li>Fotografer & Videografer</li>
+                        <li>Editor</li>
+                    </ul>
+                </div>
+
+                <div class="about-section">
+                    <h3>Kontak Saya</h3>
+                    <p>Email: iirfan3121@gmail.com</p>
+                    <p>Instagram: eerfan_2</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 Universitas Bale Bandung</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

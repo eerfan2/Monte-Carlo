@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulasi Monte Carlo - Data Riwayat</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-primary text-white text-center py-4">
+        <h1>Simulasi Prediksi Jumlah Tamu Menginap</h1>
+        <h2>Menggunakan Monte Carlo</h2>
+    </header>
+
+    <!-- Navigation Bar -->
+    <ul class="nav nav-tabs bg-dark-subtle">
+        <li class="nav-item">
+            <a class="nav-link" href="/">Beranda</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/data">Data Riwayat</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/simulasi">Simulasi</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/hasil">Hasil</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/about">Tentang</a>
+        </li>
+    </ul>
+
+    <!-- Content Section -->
+    <div class="container my-4">
+        <h2 class="text-center">Data Riwayat Simulasi</h2>
+        
+        <!-- Menampilkan Tahun -->
+        {% if data_json %}
+            <h3 class="text-center">Data Simulasi Berdasarkan Tahun</h3>
+        {% else %}
+            <div class="alert alert-warning text-center mt-4" role="alert">
+                Belum ada data simulasi yang disimpan. Silakan lakukan simulasi terlebih dahulu.
+            </div>
+        {% endif %}
+
+        <!-- Tabel Data per Tahun -->
+        {% if data_json %}
+            {% for item in data_json %}
+                <h3 class="text-center mt-4">Tahun Simulasi: {{ item['tahun'] }}</h3>
+                <table class="table table-bordered mt-4 table-striped">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>No</th>
+                            <th>Permintaan</th>
+                            <th>Frekuensi</th>
+                            <th>Distribusi Probabilitas</th>
+                            <th>Distribusi Kumulatif</th>
+                            <th>Interval</th>
+                            <td>Angka Acak</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for kategori in item['kategori'] %}
+                            <tr>
+                                <td>{{ loop.index }}</td> <!-- Nomor urut -->
+                                <td>{{ kategori['nama'] }}</td>
+                                <td>{{ kategori['frekuensi'] }}</td>
+                                <td>{{ kategori['distribusi_probabilitas'] }}</td>
+                                <td>{{ kategori['distribusi_kumulatif'] }}</td>
+                                <td>{{ kategori['interval'] }}</td>
+                                <td>{{ kategori['random_number'] }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% endfor %}
+        {% else %}
+            <p class="text-center">Belum ada data riwayat.</p>
+        {% endif %}
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 Universitas Bale Bandung</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
