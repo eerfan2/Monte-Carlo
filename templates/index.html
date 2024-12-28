@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulasi Monte Carlo - Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <header class="bg-primary text-white text-center py-4">
+        <h1>Simulasi Prediksi Jumlah Tamu Menginap</h1>
+        <h2>Menggunakan Monte Carlo</h2>
+    </header>
+
+    <!-- Navigation Bar -->
+    <ul class="nav nav-tabs bg-dark-subtle">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Beranda</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/data">Data Riwayat</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/simulasi">Simulasi</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/hasil">Hasil</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/about">Tentang Saya</a>
+        </li>
+    </ul>
+
+    <!-- Content Section -->
+    <div class="container my-4">
+        <h2 class="text-center">Monte Carlo - Prediksi Jumlah Tamu Menginap</h2>
+        <p>
+            Dalam dunia perhotelan, prediksi jumlah tamu yang akan menginap di suatu hotel sangat penting untuk perencanaan yang efektif. Salah satu metode yang digunakan untuk memperkirakan jumlah tamu yang menginap adalah dengan menggunakan <strong>Metode Monte Carlo</strong>.
+        </p>
+        <p>
+            Metode Monte Carlo adalah sebuah teknik statistik yang menggunakan simulasi acak untuk menghitung hasil probabilistik dari suatu sistem yang kompleks dan tidak pasti. Dalam konteks prediksi jumlah tamu menginap, Monte Carlo membantu kita untuk memahami berbagai skenario yang mungkin terjadi dengan menggunakan simulasi acak yang menghasilkan estimasi jumlah tamu berdasarkan data historis atau pola yang ada.
+        </p>
+        <p>
+            Proses Monte Carlo berfungsi dengan cara menghasilkan sejumlah besar nilai acak yang sesuai dengan distribusi probabilitas tertentu yang ditetapkan berdasarkan data sebelumnya, seperti frekuensi kunjungan tamu di masa lalu. Dari hasil simulasi ini, kita bisa menghitung prediksi jumlah tamu menginap dengan lebih akurat. Dalam simulasi ini, kita dapat menghitung rentang kemungkinan jumlah tamu yang menginap dalam jangka waktu tertentu, memberikan gambaran yang lebih jelas dan membantu dalam pengambilan keputusan operasional.
+        </p>
+        <p>
+            Salah satu keunggulan metode Monte Carlo adalah kemampuannya untuk menangani ketidakpastian dan variabilitas yang tinggi dalam prediksi. Hal ini sangat relevan dalam industri perhotelan yang sering kali menghadapi fluktuasi jumlah tamu yang datang berdasarkan musim, peristiwa khusus, dan faktor eksternal lainnya. Dengan Monte Carlo, kita dapat melihat berbagai hasil simulasi berdasarkan variabel yang bervariasi, sehingga bisa mendapatkan gambaran lebih komprehensif tentang kemungkinan yang ada.
+        </p>
+        <p>
+            Secara teknis, dalam implementasinya, simulasi ini melibatkan penggunaan deret angka acak yang dihitung berdasarkan parameter-parameter seperti frekuensi kunjungan dan distribusi probabilitas. Kemudian, hasil simulasi digunakan untuk memprediksi jumlah tamu yang mungkin menginap pada periode yang akan datang. Setiap hasil simulasi memberikan perkiraan jumlah tamu berdasarkan kemungkinan yang terjadi dalam pola kunjungan historis yang telah dihitung sebelumnya.
+        </p>
+        <p>
+            <strong>Bagaimana cara kerja simulasi Monte Carlo di sini?</strong><br>
+            1. Pengguna memasukkan data terkait kategori permintaan dan frekuensinya.<br>
+            2. Sistem menghitung distribusi probabilitas dan kumulatif berdasarkan data yang diberikan.<br>
+            3. Angka acak dihasilkan untuk masing-masing kategori, dan hasilnya digunakan untuk mensimulasikan jumlah tamu yang menginap.<br>
+            4. Berdasarkan simulasi tersebut, prediksi jumlah tamu untuk masa depan dihitung dan ditampilkan sebagai hasil.<br>
+        </p>
+        <p>
+            Dengan simulasi ini, pihak manajemen hotel dapat merencanakan lebih baik kapasitas kamar, layanan yang diperlukan, dan alokasi sumber daya yang tepat untuk menghadapi berbagai situasi yang mungkin terjadi di masa depan. Simulasi Monte Carlo ini juga memungkinkan pengambilan keputusan yang lebih informasional, berbasis data, dengan mempertimbangkan berbagai kemungkinan yang ada.
+        </p>
+        <p>
+            <strong>Manfaat bagi industri perhotelan:</strong><br>
+            1. Membantu manajemen dalam perencanaan operasional yang lebih efisien dengan memperkirakan permintaan tamu.<br>
+            2. Meminimalkan risiko kekurangan atau kelebihan kapasitas kamar berdasarkan prediksi jumlah tamu.<br>
+            3. Mengoptimalkan pengelolaan sumber daya seperti staf dan fasilitas yang diperlukan untuk melayani tamu.<br>
+            4. Memberikan informasi yang berguna untuk promosi atau penawaran khusus berdasarkan pola kunjungan tamu.<br>
+            5. Membantu pengambilan keputusan dalam menghadapi ketidakpastian pasar yang dipengaruhi oleh faktor eksternal, seperti musim, acara, atau kondisi ekonomi.<br>
+        </p>
+        <p>
+            Dengan menggunakan simulasi ini, Anda dapat memperoleh gambaran yang lebih jelas tentang kemungkinan jumlah tamu yang menginap di hotel, memfasilitasi perencanaan yang lebih matang dan efektif. Jadi, jika Anda ingin mencoba merencanakan operasi hotel dengan lebih akurat dan berbasis data, ayo mulai dengan memasukkan data Anda di halaman simulasi!
+        </p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 Universitas Bale Bandung</p>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
