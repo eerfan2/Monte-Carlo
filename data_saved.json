@@ -1,0 +1,105 @@
+[
+    {
+        "tahun": 2020,
+        "jumlah_kategori": 12,
+        "kategori": [
+            {
+                "nama": "Januari",
+                "frekuensi": 136,
+                "distribusi_probabilitas": 0.073,
+                "distribusi_kumulatif": 0.073,
+                "interval": "1-7",
+                "random_number": 10
+            },
+            {
+                "nama": "Februari",
+                "frekuensi": 127,
+                "distribusi_probabilitas": 0.068,
+                "distribusi_kumulatif": 0.141,
+                "interval": "8-14",
+                "random_number": 30
+            },
+            {
+                "nama": "Maret",
+                "frekuensi": 145,
+                "distribusi_probabilitas": 0.078,
+                "distribusi_kumulatif": 0.219,
+                "interval": "15-22",
+                "random_number": 70
+            },
+            {
+                "nama": "April",
+                "frekuensi": 168,
+                "distribusi_probabilitas": 0.09,
+                "distribusi_kumulatif": 0.309,
+                "interval": "23-31",
+                "random_number": 55
+            },
+            {
+                "nama": "Mei",
+                "frekuensi": 189,
+                "distribusi_probabilitas": 0.101,
+                "distribusi_kumulatif": 0.41,
+                "interval": "32-41",
+                "random_number": 25
+            },
+            {
+                "nama": "Juni",
+                "frekuensi": 156,
+                "distribusi_probabilitas": 0.083,
+                "distribusi_kumulatif": 0.493,
+                "interval": "42-49",
+                "random_number": 60
+            },
+            {
+                "nama": "Juli",
+                "frekuensi": 148,
+                "distribusi_probabilitas": 0.079,
+                "distribusi_kumulatif": 0.572,
+                "interval": "50-57",
+                "random_number": 35
+            },
+            {
+                "nama": "Agustus",
+                "frekuensi": 134,
+                "distribusi_probabilitas": 0.072,
+                "distribusi_kumulatif": 0.644,
+                "interval": "58-64",
+                "random_number": 80
+            },
+            {
+                "nama": "September",
+                "frekuensi": 158,
+                "distribusi_probabilitas": 0.084,
+                "distribusi_kumulatif": 0.728,
+                "interval": "65-73",
+                "random_number": 75
+            },
+            {
+                "nama": "Oktober",
+                "frekuensi": 144,
+                "distribusi_probabilitas": 0.077,
+                "distribusi_kumulatif": 0.805,
+                "interval": "74-80",
+                "random_number": 65
+            },
+            {
+                "nama": "November",
+                "frekuensi": 180,
+                "distribusi_probabilitas": 0.096,
+                "distribusi_kumulatif": 0.901,
+                "interval": "81-90",
+                "random_number": 45
+            },
+            {
+                "nama": "Desember",
+                "frekuensi": 187,
+                "distribusi_probabilitas": 0.1,
+                "distribusi_kumulatif": 1.001,
+                "interval": "91-100",
+                "random_number": 5
+            }
+        ],
+        "akurasi": 94
+    }
+]
